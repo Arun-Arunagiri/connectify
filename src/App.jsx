@@ -9,6 +9,7 @@ import Navbar from "./Components/Navbar/Navbar"; // Assuming you have a Navbar c
 import Footer from "./Components/Footer/Footer";
 import About from "./Pages/About/About";
 import AdminPage from "./Pages/Admin/Admin";
+import Analysis from "./Pages/Analysis/Analysis";
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path="/mainpage" element={<Mainpage />} />
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/analysis" element={<Analysis/>} />
+
         </Routes>
       </div>
       <Footer />

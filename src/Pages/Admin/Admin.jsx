@@ -1,17 +1,31 @@
-import React from 'react';
-import './Admin.css';
+import React from "react";
+import "./Admin.css";
+import { useNavigate } from 'react-router-dom';
 
 const AdminPage = () => {
+    const navigate = useNavigate();
+  const handleAnalysisClick = () => {
+    navigate("/analysis"); 
+  };
   const messageData = [
-    { message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, totam!", yesCount: 100, noCount: 50 },
+    {
+      message:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, totam!",
+      yesCount: 100,
+      noCount: 50,
+    },
     { message: "Message 2", yesCount: 100, noCount: 50 },
     { message: "Message 3", yesCount: 50, noCount: 10 },
     { message: "Message 4", yesCount: 20, noCount: 30 },
     { message: "Message 5", yesCount: 30, noCount: 20 },
-    { message: "Message 2", yesCount: 100, noCount: 50 },
-    { message: "Message 3", yesCount: 50, noCount: 10 },
-    { message: "Message 4", yesCount: 20, noCount: 30 },
-    { message: "Message 5", yesCount: 30, noCount: 20 },
+    { message: "Message 6", yesCount: 100, noCount: 50 },
+    { message: "Message 7", yesCount: 50, noCount: 10 },
+    { message: "Message 8", yesCount: 20, noCount: 30 },
+    { message: "Message 9", yesCount: 30, noCount: 20 },
+    { message: "Message 6", yesCount: 100, noCount: 50 },
+    { message: "Message 7", yesCount: 50, noCount: 10 },
+    { message: "Message 8", yesCount: 20, noCount: 30 },
+    { message: "Message 9", yesCount: 30, noCount: 20 },
   ];
 
   return (
@@ -20,9 +34,14 @@ const AdminPage = () => {
       <div className="dashboard">
         <div className="left-side">
           <h2>Post a New Message</h2>
-          <textarea className="admin-textarea" placeholder="Write your message here..." />
+          <textarea
+            className="admin-textarea"
+            placeholder="Write your message here..."
+          />
           <button className="admin-submit-btn">Post Message</button>
-          <button className="admin-analysis-btn">Analysis Page</button>
+          <button onClick={handleAnalysisClick} className="admin-analysis-btn">
+            Analysis Page
+          </button>
         </div>
 
         <div className="right-side">
