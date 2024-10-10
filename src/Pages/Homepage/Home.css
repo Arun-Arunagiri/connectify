@@ -13,9 +13,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;  
+    background-color: aliceblue;
 }
+.right{
+    width: 50vw;
+    height: 70vh;
+    /* border: 1px solid black; */
+    margin: 5px;
+}
+
 .left{
 
-    width: 50%;
-    height: 50%;
+    width: 50vw;
+    height: 70vh;
+    /* border: 1px solid black; */
+    margin: 5px;
+}
+
+.left img{
+
+    width: 95%;
+    height: 95%;
+    margin: 5px;
 }
