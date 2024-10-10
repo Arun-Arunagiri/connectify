@@ -42,7 +42,7 @@ const Login = () => {
         if (role === 'admin') {
           navigate('/admin');  // Admin dashboard route
         } else {
-          navigate('/mainpage');  // User dashboard route
+          navigate('/userpage');  // User dashboard route
         }
   
       } else {
