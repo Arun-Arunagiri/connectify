@@ -10,6 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import About from "./Pages/About/About";
 import AdminPage from "./Pages/Admin/Admin";
 import Analysis from "./Pages/Analysis/Analysis";
+import Messages from "./Pages/Messages/Messages";
 
 const App = () => {
   return (
@@ -23,10 +24,12 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/mainpage" element={<Mainpage />} />
+          <Route path="/userpage" element={<Mainpage />} />
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/analysis" element={<Analysis/>} />
+          <Route path="/message" element={<Messages/>} />
+
 
         </Routes>
       </div>

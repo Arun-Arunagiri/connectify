@@ -104,6 +104,26 @@
     transform: scale(1.1);
 }
 
+.admin-message-btn{
+    background-color:green;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    align-items: center;
+    margin-top: 5vh;
+    margin-left: 13vw;
+    border-radius: 30px;
+    width: 20vw;
+    height: 5vh;
+    overflow: hidden;   
+}
+
+.admin-message-btn:hover{
+    box-shadow: 0px 5px 10px green;
+    transform: scale(1.1);
+}
+
+
 .right-side {
     width: 50%;
     background-color: white;

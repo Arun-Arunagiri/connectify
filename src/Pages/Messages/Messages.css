@@ -1,0 +1,80 @@
+.right-side {
+    width: 98vw;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* border: 1px solid black; */
+    overflow: scroll;
+}
+
+.right-side::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.right-side::-webkit-scrollbar-thumb {
+    background-color: #0084ff; /* Scrollbar thumb color */
+    border-radius: 10px; /* Make the scrollbar thumb rounded */
+}
+
+.right-side::-webkit-scrollbar-thumb:hover {
+    background-color: #005bb5; /* Change thumb color on hover */
+}
+
+.right-side::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Scrollbar track color */
+    border-radius: 10px; /* Make the scrollbar track rounded */
+}
+
+/* For Firefox */
+.right-side {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: #0084ff #f0f0f0; /* Thumb and track colors */
+}
+
+.admin-table {
+    width: 100%;
+    
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.admin-table th {
+    padding: 12px;
+    text-align: left;
+    background-color: #004aad;
+    color: yellow;
+    
+    
+}
+
+.admin-table td {
+    background-color: #85baff;
+    padding: 20px;
+    margin: 2px;
+    border: 1px solid white;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    /* border-radius: 10px; */
+}
+
+.admin-table td {
+    font-size: 16px;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #004aad;
+}
+
+.admin-table tr:hover {
+    background-color: #ddd;
+}
+
+.admin-table td:last-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+.admin-table td:first-child {
+    width: 60%; /* Message cell gets more space */
+}

@@ -28,6 +28,8 @@ const Mainpage = () => {
 
   return (
     <div className="mainpage">
+
+      <h1>User Dashboard</h1>
       {/* <Navbar /> */}
       <div className="userpage">
         <div className="left">

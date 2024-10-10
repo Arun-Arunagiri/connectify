@@ -6,6 +6,11 @@
     justify-content: space-between;
     background-color: white;
 }
+.mainpage h1{
+    color: #004aad;
+    font-size: 15vwpx;
+    margin-left: 30vw;
+}
 
 .userpage {
     display: flex;
