@@ -29,7 +29,7 @@ const AdminPage = () => {
       
       // Send the POST request with the token in the Authorization header
       const response = await axios.post(
-        'http://localhost:3000/message',
+        'http://192.168.137.1:3000/message',
         { message },
         {
           headers: {
