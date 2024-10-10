@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     background-color: #ffffff;
     /* z-index: 1000; */
     padding-bottom: 15px;
@@ -12,9 +13,11 @@
 }
 
 .navbar h2 {
-    color: black;
-    font-family: oleo script;
-    margin-top: 25px;
+    color: #165cd6;
+    font-size: 30px;
+    font-family: Shrikhand, serif;
+    /* margin-top: 2px; */
+    letter-spacing: 1px;
 }
 
 .navbar-header {
@@ -62,7 +65,7 @@
     padding: 15px 15px;
     font-size: 1em;
     font-weight: 500;
-    font-family: inter;
+    font-family: Shrikhand, serif;
     background-color: #165cd6;
     color: white;
     cursor: pointer;
