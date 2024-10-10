@@ -1,12 +1,20 @@
-import React from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
+import React from "react";
+import Navbar from "../../Components/Navbar/Navbar";
+import img2 from "../../assets/img2.svg";
 
 const Home = () => {
   return (
-    <div>
-        <Navbar/>
-    </div>
-  )
-}
+    <div className="home">
+      <Navbar />
 
-export default Home
+      <div className="main">
+
+        <h1>Connectify</h1>
+        <h2>Connectify</h2>
+
+      </div>
+    </div>
+  );
+};
+
+export default Home;
