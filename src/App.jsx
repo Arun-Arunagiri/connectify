@@ -8,10 +8,10 @@ import Mainpage from './Pages/Mainpage/Mainpage'
 const App = () => {
   return (
     <div>
-      <Home/>
+      {/* <Home/> */}
       {/* <Login/> */}
-      <Signup />
-      {/* <Mainpage/> */}
+      {/* <Signup /> */}
+      <Mainpage/>
     </div>
   )
 }
