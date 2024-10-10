@@ -5,11 +5,11 @@
 }
 
 .main{
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;  
     background-color: white;
+    margin-bottom: 10vh;
 }
 .right-login{
     padding: 50px;
@@ -24,7 +24,8 @@
 
 .right-login h1{
     color: #165cd6;
-    margin-left: 17vw;
+    /* margin-left: 17vw; */
+    margin: auto;
     font-family: "Josefin Sans", sans-serif ;
 }
 
