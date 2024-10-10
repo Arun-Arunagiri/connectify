@@ -78,6 +78,7 @@
     border-radius: 30px;
     width: 20vw;
     height: 5vh;
+    overflow: hidden;
 }
 
 .admin-submit-btn:hover{
@@ -95,9 +96,10 @@
     border-radius: 30px;
     width: 20vw;
     height: 5vh;
+    overflow: hidden;
 }
 
-.admin-analyis-btn:hover{
+.admin-analysis-btn:hover{
     box-shadow: 0px 5px 10px red;
     transform: scale(1.1);
 }
@@ -154,9 +156,11 @@
 .admin-table td {
     background-color: #85baff;
     padding: 20px;
+    margin: 2px;
     border: 1px solid white;
     color: black;
     font-size: 18px;
+    font-weight: 500;
     /* border-radius: 10px; */
 }
 
