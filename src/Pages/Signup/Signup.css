@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');.login{
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Shrikhand&display=swap'); 
+.signup{
     width: 100vw;
     height: 100vh;
     background-color: white;
@@ -11,8 +12,8 @@
     justify-content: space-around;  
     background-color: white;
 }
-.right-login{
-    padding: 50px;
+.right-signup{
+    /* padding: 50px; */
     width: 45vw;
     height: 60vh;
     /* border: 1px solid black; */
@@ -22,16 +23,11 @@
     justify-content: space-between;
 }
 
-.right-login h1{
+.right-signup h1{
     color: #165cd6;
     margin-left: 17vw;
-    font-family: "Josefin Sans", sans-serif ;
-}
-
-.right-login p {
-    color: black;
-    align-items: center;
-    margin: auto;
+    font-family: Shrikhand, serif ;
+    letter-spacing: 2px;
 }
 .inputs input{
 
@@ -39,9 +35,7 @@
     /* color: blue; */
     color: blue;
     padding: 20px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
     border: none;
     outline: none;
     border-radius: 30px;
@@ -59,8 +53,9 @@
 
     background-color: #165cd6;
     color: white;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: Shrikhand, serif;
     letter-spacing: 1px;
+    
 }
 .submit-btn:hover{
     box-shadow: 0 5px 15px #165cd6;
@@ -70,7 +65,7 @@
 
     background-color: red;
     color: white;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: Shrikhand, serif;
     letter-spacing: 1px;
 
 }
@@ -81,7 +76,7 @@
 
 }
 
-.left-login{
+.left-signup{
 
     width: 50vw;
     height: 70vh;
@@ -91,15 +86,11 @@
 
 
 
-.left-login img{
+.left-signup img{
 
     /* width: 95%; */
     height: 95%;
     margin: 5px;
+    /* margin-right: 10px; */
     border-radius: 50px;
-}
-
-.left-login img:hover {
-    transform: scale(1.04);
-    transition: 0.5s;
 }
