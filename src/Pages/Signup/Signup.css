@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Shrikhand&display=swap'); 
+.signup{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.main{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  
+    background-color: white;
+}
+.right-signup{
+    /* padding: 50px; */
+    width: 45vw;
+    height: 60vh;
+    /* border: 1px solid black; */
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-signup h1{
+    color: #165cd6;
+    margin-left: 17vw;
+    font-family: Shrikhand, serif ;
+    letter-spacing: 2px;
+}
+.inputs input{
+
+    background-color: rgb(146, 185, 219);
+    /* color: blue; */
+    color: blue;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    width: 30vw;
+    margin: 5px;
+    margin-left: 5vw;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.submit-btn{
+
+    background-color: #165cd6;
+    color: white;
+    font-family: Shrikhand, serif;
+    letter-spacing: 1px;
+    
+}
+.submit-btn:hover{
+    box-shadow: 0 5px 15px #165cd6;
+}
+
+.clear-btn{
+
+    background-color: red;
+    color: white;
+    font-family: Shrikhand, serif;
+    letter-spacing: 1px;
+
+}
+
+.clear-btn:hover{
+
+    box-shadow: 0 5px 15px red; 
+
+}
+
+.left-signup{
+
+    width: 50vw;
+    height: 70vh;
+    /* border: 1px solid black; */
+    margin: 5px;
+}
+
+
+
+.left-signup img{
+
+    /* width: 95%; */
+    height: 95%;
+    margin: 5px;
+    /* margin-right: 10px; */
+    border-radius: 50px;
+}
