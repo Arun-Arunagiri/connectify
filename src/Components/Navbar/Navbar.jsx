@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import votingmachine from '../../assets/voting Machine 1.png'
+import votingmachine from '../../assets/img1.svg'
 
 
 const Navbar = () => {
