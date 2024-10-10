@@ -5,6 +5,25 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from '../../Components/Footer/Footer';
 import { Link } from 'react-router-dom';
 
+async function login(username, password) {
+  const response = await fetch('http://localhost:3000/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    return data.token;  // JWT token
+  } else {
+    const error = await response.text();
+    throw new Error('Login failed: ' + error);
+  }
+}
+
+
 const clear = () => {
   document.getElementById("user").value = "";
   document.getElementById("pass").value = "";
@@ -12,8 +31,6 @@ const clear = () => {
 const submit = () => {
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
-  console.log(user);
-  console.log(pass);
 }
 const Login = () => {
   return (
@@ -21,14 +38,14 @@ const Login = () => {
       {/* <Navbar /> */}
 
       <div className="main">
-      <div className="left-login">
+        <div className="left-login">
           <img src={img2} alt="" />
         </div>
         <div className="right-login">
           <h1>LOGIN</h1>
           <div className="inputs">
-            <input type="text" id='user' placeholder="Username" required/>
-            <input type="password" id='pass' placeholder="Password" required/>
+            <input type="text" id='user' placeholder="Username" required />
+            <input type="password" id='pass' placeholder="Password" required />
           </div>
 
           <div className="buttons">
@@ -37,7 +54,7 @@ const Login = () => {
           </div>
           <p>Don't have an account?<Link to="/signup">Signup</Link></p>
         </div>
-        
+
       </div>
       {/* <Footer /> */}
     </div>
