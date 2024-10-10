@@ -139,25 +139,8 @@
     border-radius: 20px;
     padding: 15px;
     font-size: 16px;
-    overflow: scroll;
+    overflow: hidden;
 
 
 }
 
-.user-msg::-webkit-scrollbar {
-    width: 10px; 
-}
-
-
-
-
-.user-msg::-webkit-scrollbar-track {
-    background-color: #f0f0f0; 
-    border-radius: 5px;
-}
-
-/* For Firefox */
-.user-msg {
-    scrollbar-width: thin; 
-    scrollbar-color: #0084ff #bbdeff; 
-}
