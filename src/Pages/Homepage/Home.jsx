@@ -12,8 +12,12 @@ const Home = () => {
 
             <div className="main">
 
-                <h1>Connectify</h1>
-                <h2>Connectify</h2>
+                <div className="right">
+
+                </div>
+                <div className="left">
+                    <img src={img2} alt="" />
+                </div>
 
             </div>
         </div>

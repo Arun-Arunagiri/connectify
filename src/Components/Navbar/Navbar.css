@@ -45,7 +45,7 @@
 
 .navbar-menu :hover {
     /* font-size: 25px; */
-    border-bottom: 3px solid #4CAF4F;
+    border-bottom: 3px solid #165cd6;
     transition: 0.1s;
 }
 
@@ -63,13 +63,13 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inter;
-    background-color: #4CAF4F;
+    background-color: #165cd6;
     color: white;
     cursor: pointer;
     transition: border-color 0.25s;
 }
 
 .navbar button:hover {
-    box-shadow: 0 5px 15px #4CAF4F;
+    box-shadow: 0 5px 15px #165cd6;
     /* border: #4CAF4F; */
 }
