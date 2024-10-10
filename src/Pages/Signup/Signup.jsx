@@ -32,7 +32,7 @@ const Signup = () => {
 
     try {
       // Send the POST request to the backend to register the user
-      const response = await axios.post('http://localhost:3000/register', {
+      const response = await axios.post('http://192.168.137.1:3000/register', {
         username: username,
         email: email,
         password: password,
