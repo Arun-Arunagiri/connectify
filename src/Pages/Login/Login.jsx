@@ -2,7 +2,6 @@ import React from "react";
 import "./Login.css";
 import img2 from "../../assets/img2.svg";
 import Navbar from "../../Components/Navbar/Navbar";
-import Footer from '../../Components/Footer/Footer'
 
 const Login = () => {
   return (
@@ -26,7 +25,6 @@ const Login = () => {
           <img src={img2} alt="" />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
