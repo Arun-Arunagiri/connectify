@@ -29,7 +29,8 @@
 .navbar-header img {
     height: 75px;
     margin-left: 25px;
-    margin-top: 10px;
+    margin-top: 0px;
+    border-radius: 55px;
 }
 .navbar-menu {
     display: flex;
