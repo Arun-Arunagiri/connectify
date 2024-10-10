@@ -26,6 +26,7 @@
 .right-login h1{
     color: #165cd6;
     margin-left: 17vw;
+    font-family: Shrikhand, serif ;
 }
 .inputs input{
 
@@ -53,7 +54,9 @@
     color: white;
     font-family: Shrikhand, serif;
     letter-spacing: 1px;
-
+}
+.submit-btn:hover{
+    box-shadow: 0 5px 15px #165cd6;
 }
 
 .clear-btn{
@@ -62,6 +65,12 @@
     color: white;
     font-family: Shrikhand, serif;
     letter-spacing: 1px;
+
+}
+
+.clear-btn:hover{
+
+    box-shadow: 0 5px 15px red;
 
 }
 
