@@ -6,7 +6,7 @@ const App = () => {
   const messageData = [
     {
       message:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, totam!",
+        "Hello world",
       yesCount: 100,
       noCount: 50,
     },

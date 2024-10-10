@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 const JWT_SECRET = 'pP7kLz8!sM9vB2fG3dEwQ7yU5tV1aX@#'; // Replace with a strong secret for JWT
@@ -72,14 +74,25 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
-    const user = await User.findOne({ username });
-    if (!user) return res.status(400).send('Invalid username or password.');
+    try {
+        // Find the user by username
+        const user = await User.findOne({ username });
+        if (!user) return res.status(400).send('Invalid username or password.');
 
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword) return res.status(400).send('Invalid username or password.');
+        // Compare the provided password with the stored hash
+        const validPassword = await bcrypt.compare(password, user.password);
+        if (!validPassword) return res.status(400).send('Invalid username or password.');
 
-    const token = jwt.sign({ _id: user._id, role: user.role }, JWT_SECRET);
-    res.status(200).json({ token });
+        // Create JWT with user ID and role (admin/user)
+        const token = jwt.sign({ _id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
+
+        // Return token and role in response
+        res.status(200).json({ token, role: user.role });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal server error');
+    }
 });
 
 // Admin posts a message
