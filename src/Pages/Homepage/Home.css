@@ -16,12 +16,12 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: aliceblue;
+    margin-bottom: 10vh;
 }
 
 .right {
     width: 50vw;
     height: 70vh;
-    /* border: 1px solid black; */
     margin: 5px;
     align-content: center;
 }
@@ -30,7 +30,7 @@
     align-content: center;
     margin: auto;
     width: 90%;
-    height: 90%;
+    height: 80%;
     padding: 0px 20px;
     background-color: #d3e1f3;
     border-radius: 25px;
@@ -50,7 +50,7 @@
 }
 
 
-.left {
+.left-img {
 
     width: 50vw;
     height: 70vh;
@@ -58,11 +58,11 @@
     margin: 5px;
 }
 
-.left img {
+.left-img img {
 
     /* width: 95%; */
     height: 95%;
-    margin: 5px;
+    margin: 5vh 5vw;
     border-radius: 25px;
 }
 
