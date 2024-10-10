@@ -1,13 +1,13 @@
 import React from 'react'
 import './Navbar.css'
-import votingmachine from '../../assets/img1.svg'
+import votingmachine from '../../assets/voting Machine 1.png'
 
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <div className="navbar-header">
-                <img src={votingmachine} alt="" />
+                <img src={img} alt="" />
                 <h2>SMART EVM</h2>
             </div>
             <div className="navbar-right">
