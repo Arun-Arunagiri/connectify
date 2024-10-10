@@ -8,9 +8,9 @@ import Mainpage from './Pages/Mainpage/Mainpage'
 const App = () => {
   return (
     <div>
-      {/* <Home/> */}
+      <Home/>
       {/* <Login/> */}
-      <Signup />
+      {/* <Signup /> */}
       {/* <Mainpage/> */}
     </div>
   )
