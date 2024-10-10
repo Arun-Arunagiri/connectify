@@ -1,62 +1,55 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import img2 from "../../assets/img2.svg"; // Import image
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import axios from 'axios'; // Import Axios for HTTP requests
+import img2 from "../../assets/img2.svg";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from '../../Components/Footer/Footer';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import axios from 'axios'; // Import Axios for making HTTP requests
 
 const Signup = () => {
-  // State to manage form input values
-  const [username, setUsername] = useState('');
+  // State to manage form inputs
+  const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-
-  // Clear input fields
+  
+  // Clear form fields
   const clear = () => {
-    setUsername('');
+    setUser('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
-    setErrorMessage('');
-    setSuccessMessage('');
   };
 
-  // Submit form data to the server for registration
+  // Submit form data to the server
   const submit = async () => {
     if (password !== confirmPassword) {
-      setErrorMessage('Passwords do not match');
+      alert("Passwords do not match");
       return;
     }
 
     try {
-      // Send the POST request to the backend to register the user
-      const response = await axios.post('http://localhost:3000/register', {
-        username: username,
+      // Send form data to the backend via POST request
+      const response = await axios.post('http://localhost:5000/register', {
+        username: user,
         email: email,
         password: password,
-        role: 'user', // Setting the role as 'user', can be dynamic if needed
+        role: 'user', // Specify the role or get it dynamically
       });
 
-      console.log(username,password,email);
-
-      // If the registration is successful
       if (response.status === 201) {
         alert('User registered successfully');
-        setSuccessMessage('User registered successfully');
-        clear(); // Clear form inputs after successful signup
+        clear(); // Clear the form on successful registration
       }
     } catch (error) {
-      // Handle registration failure
       console.error("Error during registration:", error);
-      setErrorMessage('User registration failed. Please try again.');
+      alert('User registration failed');
     }
   };
 
   return (
     <div className="signup">
-      {/* Form layout */}
+      {/* <Navbar /> */}
       <div className="main">
 
         <div className="right-signup">
@@ -71,55 +64,45 @@ const Signup = () => {
           <div className="inputs">
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
               placeholder="Enter Username"
-              required
             />
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter Email"
-              required
             />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter Password"
-              required
             />
             <input
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
-              required
             />
           </div>
 
           <div className="buttons">
-            <button type="button" onClick={clear} className="clear-btn">
-              Clear
-            </button>
-            <button type="button" onClick={submit} className="submit-btn">
-              Signup
-            </button>
+            <button type='button' onClick={clear} className="clear-btn">Clear</button>
+            <button type='button' onClick={submit} className="submit-btn">Signup</button>
           </div>
-
           <p>
-            Already have an account? <Link to="/login">Login</Link>
+            Already have an account?{' '}
+            <Link to="/login">Login</Link>
           </p>
-
-          <p>{setSuccessMessage}</p>
         </div>
         <div className="left-signup">
           <img src={img2} alt="Signup Illustration" />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

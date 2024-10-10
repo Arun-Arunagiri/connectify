@@ -10,6 +10,9 @@ const AdminPage = () => {
   const handleAnalysisClick = () => {
     navigate("/analysis");
   };
+  const handleMessageClick = () => {
+    navigate("/message");
+  };
   const messageData = [
     {
       message:
@@ -44,6 +47,9 @@ const AdminPage = () => {
           <button className="admin-submit-btn">Post Message</button>
           <button onClick={handleAnalysisClick} className="admin-analysis-btn">
             Analysis Page
+          </button>
+          <button onClick={handleMessageClick} className="admin-message-btn">
+            Message Page
           </button>
         </div>
 
