@@ -2,15 +2,18 @@ import React from "react";
 import "./Admin.css";
 import { useNavigate } from 'react-router-dom';
 
+
+
+
 const AdminPage = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleAnalysisClick = () => {
-    navigate("/analysis"); 
+    navigate("/analysis");
   };
   const messageData = [
     {
       message:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, totam!",
+        "Hello World",
       yesCount: 100,
       noCount: 50,
     },
