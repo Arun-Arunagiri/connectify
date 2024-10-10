@@ -3,6 +3,7 @@
     width: 100vw;
     height: 100vh;
     background-color: white;
+    /* overflow: hidden; */
 }
 
 .main{
@@ -11,6 +12,7 @@
     flex-direction: row;
     justify-content: space-around;  
     background-color: white;
+    margin-bottom: 10vh;
 }
 .right-signup{
     /* padding: 50px; */
@@ -20,27 +22,33 @@
     margin: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .right-signup h1{
     color: #165cd6;
-    margin-left: 17vw;
-    font-family: Shrikhand, serif ;
-    letter-spacing: 2px;
+    margin: auto;
+    font-family: "Josefin Sans", sans-serif ;
+    letter-spacing: 1px;
+}
+
+.right-signup p {
+    margin: auto;
+    margin-top: 25px;
+    color: black;
 }
 .inputs input{
 
     background-color: rgb(146, 185, 219);
     /* color: blue; */
     color: blue;
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
     border: none;
     outline: none;
     border-radius: 30px;
     width: 30vw;
-    margin: 5px;
+    /* margin: auto; */
     margin-left: 5vw;
     margin-bottom: 20px;
 }
@@ -53,7 +61,7 @@
 
     background-color: #165cd6;
     color: white;
-    font-family: Shrikhand, serif;
+    font-family: "Josefin Sans", sans-serif;
     letter-spacing: 1px;
     
 }
@@ -65,7 +73,7 @@
 
     background-color: red;
     color: white;
-    font-family: Shrikhand, serif;
+    font-family: "Josefin Sans", sans-serif;
     letter-spacing: 1px;
 
 }
@@ -93,4 +101,8 @@
     margin: 5px;
     /* margin-right: 10px; */
     border-radius: 50px;
+}
+.left-signup img:hover {
+    transform: scale(1.04);
+    transition: 0.5s;
 }
