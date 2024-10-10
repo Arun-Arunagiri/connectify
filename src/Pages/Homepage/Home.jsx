@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import img2 from "../../assets/img2.svg";
 
+
+
 const Home = () => {
   return (
     <div className="home">
