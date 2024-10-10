@@ -5,19 +5,19 @@ import "./Home.css";
 import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
-  return (
-    <div className="home">
-      <Navbar />
+    return (
+        <div className="home">
+            <Navbar />
 
-      <div className="main">
-        <div className="right"></div>
-        <div className="left">
-          <img src={img2} alt="" />
+            <div className="main">
+                <div className="right"></div>
+                <div className="left">
+                    <img src={img2} alt="" />
+                </div>
+            </div>
+            <Footer />
         </div>
-      </div>
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Home;
