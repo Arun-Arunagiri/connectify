@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oleo+Script:wght@400;700&display=swap');
 
 .navbar {
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +14,7 @@
 .navbar h2 {
     color: black;
     font-family: oleo script;
+    margin-top: 25px;
 }
 
 .navbar-header {
@@ -25,6 +25,8 @@
 
 .navbar-header img {
     height: 75px;
+    margin-left: 25px;
+    margin-top: 10px;
 }
 .navbar-menu {
     display: flex;
@@ -36,7 +38,8 @@
     font-family: inter;
     cursor: pointer;
     align-items: center;
-    padding-bottom: 5px;
+    /* padding-bottom: 5px; */
+    border-bottom: 3px solid white;
 
 }
 
@@ -53,6 +56,7 @@
 }
 
 .navbar button {
+    margin-right: 25px;
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 15px 15px;
@@ -67,5 +71,5 @@
 
 .navbar button:hover {
     box-shadow: 0 5px 15px #4CAF4F;
-    border: #4CAF4F;
+    /* border: #4CAF4F; */
 }
