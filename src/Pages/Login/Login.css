@@ -40,13 +40,14 @@
     /* color: blue; */
     color: blue;
     padding: 20px;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 1px;
     font-family: "Josefin Sans", sans-serif;
     border: none;
     outline: none;
     border-radius: 30px;
     width: 30vw;
+    height: 5vh;
     margin: 5px;
     margin-left: 5vw;
     margin-bottom: 20px;
@@ -97,6 +98,7 @@
     /* width: 95%; */
     height: 95%;
     margin: 5px;
+    margin-left: 5vw;
     border-radius: 50px;
 }
 

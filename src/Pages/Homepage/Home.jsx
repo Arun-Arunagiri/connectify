@@ -7,7 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 const Home = () => {
     return (
         <div className="home">
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="main">
                 <div className="right">
                     <div className="content">
@@ -18,7 +18,7 @@ const Home = () => {
                     <img src={img2} alt="" />
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

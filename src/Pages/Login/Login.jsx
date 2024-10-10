@@ -3,6 +3,7 @@ import "./Login.css";
 import img2 from "../../assets/img2.svg";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from '../../Components/Footer/Footer';
+import { Link } from 'react-router-dom';
 
 const clear = () => {
   document.getElementById("user").value = "";
@@ -17,9 +18,12 @@ const submit = () => {
 const Login = () => {
   return (
     <div className="login">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="main">
+      <div className="left-login">
+          <img src={img2} alt="" />
+        </div>
         <div className="right-login">
           <h1>LOGIN</h1>
           <div className="inputs">
@@ -31,13 +35,11 @@ const Login = () => {
             <button type='button' onClick={clear} className="clear-btn">Clear</button>
             <button type='button' onClick={submit} className="submit-btn">Login</button>
           </div>
-          <p>Don't have an account?<a href="#">Signup</a></p>
+          <p>Don't have an account?<Link to="/signup">Signup</Link></p>
         </div>
-        <div className="left-login">
-          <img src={img2} alt="" />
-        </div>
+        
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

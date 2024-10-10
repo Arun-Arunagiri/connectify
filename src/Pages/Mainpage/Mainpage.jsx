@@ -28,7 +28,7 @@ const Mainpage = () => {
 
   return (
     <div className="mainpage">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="userpage">
         <div className="left">
           <div className="msg">
@@ -56,7 +56,7 @@ const Mainpage = () => {
           )}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

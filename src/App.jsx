@@ -1,19 +1,35 @@
-import React from 'react'
-import './App.css'
-import Home from './Pages/Homepage/Home'
-import Login from './Pages/Login/Login'
-import Signup from './Pages/Signup/Signup'
-import Mainpage from './Pages/Mainpage/Mainpage'
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Homepage/Home";
+import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
+import Mainpage from "./Pages/Mainpage/Mainpage";
+import Navbar from "./Components/Navbar/Navbar"; // Assuming you have a Navbar component
+import Footer from "./Components/Footer/Footer";
+import About from "./Pages/About/About";
+import AdminPage from "./Pages/Admin/Admin";
 
 const App = () => {
   return (
-    <div>
-      {/* <Home/> */}
-      {/* <Login/> */}
-      <Signup />
-      {/* <Mainpage/> */}
-    </div>
-  )
-}
+    <Router>
+      <div>
+        {/* Add Navbar here if you want consistent navigation */}
+        <Navbar />
 
-export default App
+        {/* Define Routes for your pages */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mainpage" element={<Mainpage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
+  );
+};
+
+export default App;
