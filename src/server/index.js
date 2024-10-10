@@ -74,6 +74,12 @@ app.post('/register', async (req, res) => {
     const { username, email, password, role } = req.body;
 
     try {
+        // Check if user already exists
+        const existingUser = await User.findOne({ username });
+        if (existingUser) {
+            return res.status(400).send('Username already taken');
+        }
+
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -82,17 +88,17 @@ app.post('/register', async (req, res) => {
             username,
             email,
             password: hashedPassword,
-            role,
+            role, // 'user' or 'admin'
         });
 
         // Save the user to the database
         await user.save();
 
-        // Send a success response
+        // Send success response
         res.status(201).send('User registered successfully');
     } catch (err) {
         console.error(err);
-        res.status(400).send('User registration failed');
+        res.status(500).send('User registration failed');
     }
 });
 // Login

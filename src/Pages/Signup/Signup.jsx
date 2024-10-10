@@ -1,82 +1,101 @@
 import React, { useState } from 'react';
 import './Signup.css';
-import img2 from "../../assets/img2.svg";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from '../../Components/Footer/Footer';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import axios from 'axios'; // Import Axios for making HTTP requests
+import img2 from "../../assets/img2.svg"; // Import image
+import { Link } from 'react-router-dom'; // Import Link for navigation
+import axios from 'axios'; // Import Axios for HTTP requests
 
 const Signup = () => {
-  // State to manage form inputs
-  const [user, setUser] = useState('');
+  // State to manage form input values
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  
-  // Clear form fields
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
+  // Clear input fields
   const clear = () => {
-    setUser('');
+    setUsername('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
+    setErrorMessage('');
+    setSuccessMessage('');
   };
 
-  // Submit form data to the server
+  // Submit form data to the server for registration
   const submit = async () => {
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      setErrorMessage('Passwords do not match');
       return;
     }
 
     try {
-      // Send form data to the backend via POST request
-      const response = await axios.post('http://localhost:5000/register', {
-        username: user,
+      // Send the POST request to the backend to register the user
+      const response = await axios.post('http://localhost:3000/register', {
+        username: username,
         email: email,
         password: password,
-        role: 'user', // Specify the role or get it dynamically
+        role: 'user', // Setting the role as 'user', can be dynamic if needed
       });
 
+      console.log(username,password,email);
+
+      // If the registration is successful
       if (response.status === 201) {
         alert('User registered successfully');
-        clear(); // Clear the form on successful registration
+        setSuccessMessage('User registered successfully');
+        clear(); // Clear form inputs after successful signup
       }
     } catch (error) {
+      // Handle registration failure
       console.error("Error during registration:", error);
-      alert('User registration failed');
+      setErrorMessage('User registration failed. Please try again.');
     }
   };
 
   return (
     <div className="signup">
-      {/* <Navbar /> */}
+      {/* Form layout */}
       <div className="main">
+
         <div className="right-signup">
           <h1>SIGNUP</h1>
+
+          {/* Display error message */}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+          {/* Display success message */}
+          {successMessage && <p className="success-message">{successMessage}</p>}
+
           <div className="inputs">
             <input
               type="text"
-              value={user}
-              onChange={(e) => setUser(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter Username"
+              required
             />
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter Email"
+              required
             />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter Password"
+              required
             />
             <input
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm Password"
+              required
             />
           </div>
 
@@ -88,16 +107,17 @@ const Signup = () => {
               Signup
             </button>
           </div>
+
           <p>
-            Already have an account?{' '}
-            <Link to="/login">Login</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
+
+          <p>{setSuccessMessage}</p>
         </div>
         <div className="left-signup">
-          <img src={img2} alt="" />
+          <img src={img2} alt="Signup Illustration" />
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };
