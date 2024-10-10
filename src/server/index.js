@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 const JWT_SECRET = 'pP7kLz8!sM9vB2fG3dEwQ7yU5tV1aX@#'; // Replace with a strong secret for JWT
@@ -54,20 +56,45 @@ function authenticateToken(req, res, next) {
 }
 
 // Register a new user (admin or regular user)
-app.post('/register', async (req, res) => {
-    const { username, password, role } = req.body;
+// app.post('/register', async (req, res) => {
+//     const { username, password, role } = req.body;
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ username, password: hashedPassword, role });
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const user = new User({ username, password: hashedPassword, role });
+
+//     try {
+//         await user.save();
+//         res.status(201).send('User registered');
+//     } catch (err) {
+//         res.status(400).send('User registration failed');
+//     }
+// });
+
+app.post('/register', async (req, res) => {
+    const { username, email, password, role } = req.body;
 
     try {
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create a new user instance
+        const user = new User({
+            username,
+            email,
+            password: hashedPassword,
+            role,
+        });
+
+        // Save the user to the database
         await user.save();
-        res.status(201).send('User registered');
+
+        // Send a success response
+        res.status(201).send('User registered successfully');
     } catch (err) {
+        console.error(err);
         res.status(400).send('User registration failed');
     }
 });
-
 // Login
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
