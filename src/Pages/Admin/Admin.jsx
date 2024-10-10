@@ -1,20 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Admin.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AdminPage = () => {
   const navigate = useNavigate();
-  const [message, setMessage] = useState(""); // State for message
-  const token = localStorage.getItem('jwtToken'); // Get the token from localStorage
+  const [message, setMessage] = useState(""); // State for new message
+  const [messages, setMessages] = useState([]); // State for fetched messages
 
-  const handleAnalysisClick = () => {
-    navigate("/analysis");
-  };
+  // Fetch token from localStorage
+  const token = localStorage.getItem('jwtToken'); 
 
-  const handleMessageClick = () => {
-    navigate("/message");
-  };
+  // Fetch recent messages from backend on component mount
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await axios.get('http://192.168.137.1:3000/messages/recent', {
+          headers: {
+            Authorization: 'Bearer ' + token // Attach JWT token in headers
+          }
+        });
+        
+        // Set the fetched messages to state
+        setMessages(response.data);
+      } catch (error) {
+        console.error("Error fetching messages:", error);
+      }
+    };
+
+    fetchMessages();
+  }, [token]);
 
   // Handle message post
   const handlePostMessage = async () => {
@@ -24,23 +39,28 @@ const AdminPage = () => {
     }
 
     try {
-
-      const token = localStorage.getItem('jwtToken');
-      
-      // Send the POST request with the token in the Authorization header
+      // Send POST request to save message
       const response = await axios.post(
         'http://192.168.137.1:3000/message',
         { message },
         {
           headers: {
-            Authorization: 'Bearer '+token // Attach the JWT token
+            Authorization: 'Bearer ' + token
           }
         }
       );
 
       if (response.status === 201) {
         alert('Message posted successfully');
-        setMessage(""); // Clear the message field after successful post
+        setMessage(""); // Clear the input after posting
+
+        // Fetch messages again after posting
+        const updatedMessages = await axios.get('http://192.168.137.1:3000/messages/recent', {
+          headers: {
+            Authorization: 'Bearer ' + token
+          }
+        });
+        setMessages(updatedMessages.data);
       }
     } catch (error) {
       console.error('Error posting message:', error);
@@ -48,17 +68,14 @@ const AdminPage = () => {
     }
   };
 
-  const messageData = [
-    { message: "Hello World", yesCount: 100, noCount: 50 },
-    { message: "Message 2", yesCount: 100, noCount: 50 },
-    { message: "Message 3", yesCount: 50, noCount: 10 },
-    { message: "Message 4", yesCount: 20, noCount: 30 },
-    { message: "Message 5", yesCount: 30, noCount: 20 },
-    { message: "Message 6", yesCount: 100, noCount: 50 },
-    { message: "Message 7", yesCount: 50, noCount: 10 },
-    { message: "Message 8", yesCount: 20, noCount: 30 },
-    { message: "Message 9", yesCount: 30, noCount: 20 },
-  ];
+  // Navigation handlers
+  const handleAnalysisClick = () => {
+    navigate("/analysis");
+  };
+
+  const handleMessageClick = () => {
+    navigate("/message");
+  };
 
   return (
     <div className="admin-container">
@@ -84,6 +101,7 @@ const AdminPage = () => {
         </div>
 
         <div className="right-side">
+          <h2>Recent Messages</h2>
           <table className="admin-table">
             <thead>
               <tr>
@@ -93,11 +111,11 @@ const AdminPage = () => {
               </tr>
             </thead>
             <tbody>
-              {messageData.map((msg, index) => (
+              {messages.map((msg, index) => (
                 <tr key={index}>
                   <td>{msg.message}</td>
-                  <td>{msg.yesCount}</td>
-                  <td>{msg.noCount}</td>
+                  <td>{msg.yes_count}</td>
+                  <td>{msg.no_count}</td>
                 </tr>
               ))}
             </tbody>
